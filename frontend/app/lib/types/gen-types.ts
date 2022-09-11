@@ -37,78 +37,12 @@ export type {
 };
 
 /**
- * Page translations
- *
- *
- */
-export interface PageTranslations extends SanityDocument {
-  _type: "page_translations";
-
-  /**
-   * Translations — `object`
-   *
-   *
-   */
-  translations?: {
-    _type: "translations";
-    /**
-     * English — `reference`
-     *
-     *
-     */
-    en?: SanityReference<Page>;
-
-    /**
-     * French — `reference`
-     *
-     *
-     */
-    fr?: SanityReference<Page>;
-
-    /**
-     * Spanish — `reference`
-     *
-     *
-     */
-    es?: SanityReference<Page>;
-  };
-}
-
-/**
- * Page
+ * Pages
  *
  *
  */
 export interface Page extends SanityDocument {
   _type: "page";
-
-  /**
-   * Singleton — `boolean`
-   *
-   *
-   */
-  singleton?: boolean;
-
-  /**
-   * Folder — `string`
-   *
-   *
-   */
-  folder?: string;
-
-  /**
-   * Locale — `locale`
-   *
-   *
-   */
-  locale: Locale;
-
-  /**
-   * Translations — `reference`
-   *
-   *
-   */
-  translations?: SanityReference<PageTranslations>;
 
   /**
    * Title — `string`
@@ -126,87 +60,57 @@ export interface Page extends SanityDocument {
 }
 
 /**
- * Header translations
+ * A/B Tests
  *
  *
  */
-export interface HeaderTranslations extends SanityDocument {
-  _type: "header_translations";
+export interface AbTest extends SanityDocument {
+  _type: "abTest";
 
   /**
-   * Translations — `object`
+   * Title — `string`
    *
    *
    */
-  translations?: {
-    _type: "translations";
-    /**
-     * English — `reference`
-     *
-     *
-     */
-    en?: SanityReference<Header>;
+  title: string;
 
-    /**
-     * French — `reference`
-     *
-     *
-     */
-    fr?: SanityReference<Header>;
+  /**
+   * Slug — `slug`
+   *
+   *
+   */
+  slug: { _type: "slug"; current: string };
 
-    /**
-     * Spanish — `reference`
-     *
-     *
-     */
-    es?: SanityReference<Header>;
-  };
+  /**
+   * LaunchDarkly flag key — `string`
+   *
+   *
+   */
+  flag?: string;
+
+  /**
+   * Variations — `array`
+   *
+   *
+   */
+  variations: Array<
+    SanityKeyed<{
+      _type: "variation";
+      /**
+       * Key — `string`
+       *
+       *
+       */
+      key: "control" | "variant";
+
+      /**
+       * Page — `reference`
+       *
+       *
+       */
+      page?: SanityReference<Page>;
+    }>
+  >;
 }
 
-/**
- * Header
- *
- *
- */
-export interface Header extends SanityDocument {
-  _type: "header";
-
-  /**
-   * Singleton — `boolean`
-   *
-   *
-   */
-  singleton?: boolean;
-
-  /**
-   * Folder — `string`
-   *
-   *
-   */
-  folder?: string;
-
-  /**
-   * Locale — `locale`
-   *
-   *
-   */
-  locale: Locale;
-
-  /**
-   * Translations — `reference`
-   *
-   *
-   */
-  translations?: SanityReference<HeaderTranslations>;
-
-  /**
-   * Pages — `array`
-   *
-   *
-   */
-  pages?: Array<SanityKeyedReference<Page>>;
-}
-
-export type Locale = "en" | "fr" | "es";
-
-export type Documents = PageTranslations | Page | HeaderTranslations | Header;
+export type Documents = Page | AbTest;

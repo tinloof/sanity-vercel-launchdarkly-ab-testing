@@ -15,9 +15,11 @@
     "@vercel/edge": "^0.0.4",
     "@vercel/node": "^2.4.4",
     "groq": "^2.29.3",
+    "launchdarkly-node-client-sdk": "^2.0.4",
     "picosanity": "^4.0.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@remix-run/dev": "^1.7.0",
