@@ -1,0 +1,11 @@
+{
+  "name": "ab-testing-sanity-vercel-launchdarkly",
+  "private": true,
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "workspaces": [
+    "cms",
+    "frontend"
+  ]
+}

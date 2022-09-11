@@ -1,0 +1,37 @@
+{
+  "name": "frontend",
+  "private": true,
+  "sideEffects": false,
+  "scripts": {
+    "build": "yarn run remix build",
+    "dev": "yarn run remix dev"
+  },
+  "dependencies": {
+    "@remix-run/node": "^1.7.0",
+    "@remix-run/react": "^1.7.0",
+    "@remix-run/vercel": "^1.7.0",
+    "@sanity/groq-store": "^0.4.1",
+    "@sanity/image-url": "^1.0.1",
+    "@vercel/edge": "^0.0.4",
+    "@vercel/node": "^2.4.4",
+    "groq": "^2.29.3",
+    "picosanity": "^4.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@remix-run/dev": "^1.7.0",
+    "@remix-run/eslint-config": "^1.7.0",
+    "@remix-run/serve": "^1.7.0",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "eslint": "^8.20.0",
+    "typescript": "^4.7.4"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT"
+}
