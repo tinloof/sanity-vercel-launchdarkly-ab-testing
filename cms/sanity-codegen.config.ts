@@ -2,7 +2,7 @@ import { SanityCodegenConfig } from "sanity-codegen";
 import { defaultBabelOptions } from "sanity-codegen/cli";
 
 const config: SanityCodegenConfig = {
-  schemaPath: "./localization/localizeSchemas.ts",
+  schemaPath: "./schemas",
   outputPath: "../frontend/app/lib/types/gen-types.ts",
   babelOptions: {
     ...defaultBabelOptions,
