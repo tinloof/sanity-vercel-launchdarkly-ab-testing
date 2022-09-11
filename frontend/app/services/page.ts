@@ -26,7 +26,6 @@ export async function getPage({ slug, userId }: GetPageParams): Promise<Page> {
 
   const flagKey = slug === "/" ? "homepage" : slug.replace(/\//g, "-");
   const flagValue = ldClient.variation(flagKey, false);
-  console.debug({ flagKey, flagValue });
 
   return (
     abTest.variations.find(({ key }) => key === flagValue)?.page ||

@@ -2,7 +2,6 @@ import S from "@sanity/desk-tool/structure-builder";
 import DocumentsPane from "sanity-plugin-documents-pane";
 
 export const getDefaultDocumentNode = ({ documentId, schemaType }) => {
-  console.debug({ documentId });
   if (schemaType === "page") {
     return S.document().views([
       S.view.form(),
