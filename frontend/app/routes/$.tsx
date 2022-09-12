@@ -45,9 +45,13 @@ export default function LandingPage() {
   return (
     <div
       style={{
-        width: 500,
-        margin: "64px auto",
-        maxWidth: "100%",
+        height: "100vh",
+        width: "100vw",
+        backgroundColor: page.theme === "dark" ? "#000" : "#fff",
+        color: page.theme === "dark" ? "#fff" : "#000",
+        position: "absolute",
+        top: 0,
+        left: 0,
       }}
     >
       <h1>{page.title}</h1>

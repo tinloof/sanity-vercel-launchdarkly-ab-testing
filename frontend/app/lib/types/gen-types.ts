@@ -57,6 +57,13 @@ export interface Page extends SanityDocument {
    *
    */
   slug: { _type: "slug"; current: string };
+
+  /**
+   * Theme — `string`
+   *
+   *
+   */
+  theme: "light" | "dark";
 }
 
 /**
