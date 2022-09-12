@@ -22,5 +22,18 @@ export default {
         source: "title",
       },
     },
+    {
+      name: "theme",
+      title: "Theme",
+      type: "string",
+      initialValue: "light",
+      validation: (Rule) => Rule.required(),
+      codegen: { required: true },
+      options: {
+        list: ["light", "dark"],
+        layout: "radio",
+        direction: "horizontal",
+      },
+    },
   ],
 };
